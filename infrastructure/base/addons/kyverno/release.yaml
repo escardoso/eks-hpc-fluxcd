@@ -14,20 +14,20 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: kyverno
-  #       namespace: flux-system
-  # # https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml
-  # values:
-  #   # baseline / restricted / privileged / custom: https://kyverno.io/policies/pod-security/
-  #   podSecurityStandard: disabled
-  #   serviceMonitor:
-  #     enabled: true
-  #   replicaCount: 2
-  #   networkPolicy:
-  #     enabled: true
-  # interval: 5m
-  # install:
-  #   crds: CreateReplace
-  # upgrade:
-  #   crds: CreateReplace
+        namespace: flux-system
+  # https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml
+  values:
+    # baseline / restricted / privileged / custom: https://kyverno.io/policies/pod-security/
+    podSecurityStandard: disabled
+    serviceMonitor:
+      enabled: true
+    replicaCount: 2
+    networkPolicy:
+      enabled: true
+  interval: 5m
+  install:
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
   # dependsOn:
   #   - name: kube-prometheus-stack
