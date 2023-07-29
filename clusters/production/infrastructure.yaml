@@ -7,7 +7,7 @@ spec:
   interval: 10m
   sourceRef:
     kind: GitRepository
-    name: infrastructure/base/addons
+    name: ./infrastructure/base/addons
   serviceAccountName: kustomize-controller
   path: ./kyverno
   prune: true
