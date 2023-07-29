@@ -4,12 +4,12 @@ metadata:
   name: infrastructure
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 10m
   serviceAccountName: kustomize-controller
   sourceRef:
     kind: GitRepository
     name: flux-system
   path: ./infrastructure/production
   prune: true
-  wait: true
+  wait:  true
   timeout: 5m
