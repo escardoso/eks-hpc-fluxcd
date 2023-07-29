@@ -10,3 +10,4 @@ spec:
     name: infrastructure/base/addons
   serviceAccountName: kustomize-controller
   path: ./kyverno
+  prume: true
