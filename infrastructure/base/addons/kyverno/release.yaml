@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: kyverno
         namespace: flux-system
-      interval: 1m
+      interval: 5m
   values:
     createSelfSignedCert: true
     fullnameOverride: kyverno
