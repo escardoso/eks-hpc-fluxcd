@@ -16,7 +16,7 @@ spec:
         name: kyverno
         namespace: flux-system
   # # https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml
-  # values:
+  values:
   #   # baseline / restricted / privileged / custom: https://kyverno.io/policies/pod-security/
   #   podSecurityStandard: disabled
   #   serviceMonitor:
@@ -24,7 +24,7 @@ spec:
   #   replicaCount: 2
   #   networkPolicy:
   #     enabled: true
-  # interval: 5m
+  interval: 5m
   # install:
   #   crds: CreateReplace
   # upgrade:
