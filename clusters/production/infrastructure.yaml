@@ -7,9 +7,6 @@ spec:
   interval: 10m
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: infrastructure/base/addons
   serviceAccountName: kustomize-controller
-  path: ./infrastructure/base/addons/kyverno
-  prune: true
-  wait: true
-  timeout: 5m
+  path: ./kyverno
