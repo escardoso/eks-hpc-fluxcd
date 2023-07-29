@@ -4,5 +4,5 @@ metadata:
   name: kyverno
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 5m
   url: https://kyverno.github.io/kyverno/
