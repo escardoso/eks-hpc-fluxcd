@@ -5,6 +5,6 @@ resources:
   # - calico
   - kyverno
   # - metrics-server
-  # - kube-prometheus-stack
+  - kube-prometheus-stack
   # - nginx-ingress-controller
   # - flagger

@@ -2,20 +2,32 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: kyverno
-  namespace: default
+  namespace: flux-system
 spec:
-  interval: 5m
+  releaseName: kyverno
   targetNamespace: kyverno
+  serviceAccountName: helm-controller
   chart:
     spec:
       chart: kyverno
-      version: '1.2.1'
+      version: v2.3.3
       sourceRef:
         kind: HelmRepository
         name: kyverno
         namespace: flux-system
-      interval: 5m
+  # https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml
   values:
-    createSelfSignedCert: true
-    fullnameOverride: kyverno
-    namespace: kyverno
+    # baseline / restricted / privileged / custom: https://kyverno.io/policies/pod-security/
+    podSecurityStandard: disabled
+    serviceMonitor:
+      enabled: true
+    replicaCount: 2
+    networkPolicy:
+      enabled: true
+  interval: 5m
+  install:
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
+  dependsOn:
+    - name: kube-prometheus-stack
