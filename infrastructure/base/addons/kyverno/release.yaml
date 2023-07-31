@@ -19,8 +19,8 @@ spec:
   values:
   #   # baseline / restricted / privileged / custom: https://kyverno.io/policies/pod-security/
   #   podSecurityStandard: disabled
-    serviceMonitor:
-      enabled: true
+    # serviceMonitor:
+    #   enabled: true
     replicaCount: 3
   #   networkPolicy:
   #     enabled: true
