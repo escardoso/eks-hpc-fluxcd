@@ -6,5 +6,5 @@ resources:
   - kyverno.yaml
   # - eks-charts-helm.yaml
   # - nginx-ingress-controller.yaml
-  - prometheus-source.yaml
+  # - prometheus-source.yaml
   # - flagger.yaml
