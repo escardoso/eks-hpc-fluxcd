@@ -21,7 +21,7 @@ spec:
   #   podSecurityStandard: disabled
     serviceMonitor:
       enabled: true
-    replicaCount: 2
+    replicaCount: 3
   #   networkPolicy:
   #     enabled: true
   interval: 5m
