@@ -4,6 +4,7 @@ resources:
   # - aws-load-balancer-controller
   # - calico
   - kyverno
+  - aws-fsx-csi-driver
   # - metrics-server
   # - kube-prometheus-stack
   # - nginx-ingress-controller

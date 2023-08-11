@@ -4,6 +4,8 @@ namespace: flux-system
 resources:
   # - calico.yaml
   - kyverno.yaml
+  - efs-csi.yaml
+  # - vpc-cni.yaml
   # - eks-charts-helm.yaml
   # - nginx-ingress-controller.yaml
   # - prometheus-source.yaml
