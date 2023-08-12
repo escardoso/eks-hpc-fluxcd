@@ -1,7 +1,7 @@
 apiVersion: iam.services.k8s.aws/v1alpha1
 kind: Role
 metadata:
-  name: eks-irsa-FSxLustreCSIDriver-role
+  name: eks-irsa-fsxLustrecsidriver-role
   namespace: kube-system
 spec:
   assumeRolePolicyDocument: |
@@ -24,6 +24,6 @@ spec:
         }
       ]
     }
-  name: eks-irsa-FSxLustreCSIDriver-role
+  name: eks-irsa-fsxLustrecsidriver-role
   policies:
   - "arn:aws:iam::526718405617:policy/eks-irsa-fsx-csi-controller-sa-policy"
