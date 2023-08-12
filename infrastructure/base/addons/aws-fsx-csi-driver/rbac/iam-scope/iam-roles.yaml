@@ -12,7 +12,7 @@ spec:
           "Sid": "",
           "Effect": "Allow",
           "Principal": {
-            "Federated": "arn:aws:iam::526718405617:oidc-provider/22B299F9904585182B1328DF00D31ECC"
+            "Federated": "arn:aws:iam::526718405617:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/22B299F9904585182B1328DF00D31ECC"
           },
           "Action": "sts:AssumeRoleWithWebIdentity",
           "Condition": {
