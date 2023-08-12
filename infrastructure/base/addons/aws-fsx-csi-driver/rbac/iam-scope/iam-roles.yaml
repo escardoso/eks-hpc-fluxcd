@@ -1,0 +1,29 @@
+apiVersion: iam.services.k8s.aws/v1alpha1
+kind: Role
+metadata:
+  name: eks-irsa-FSxLustreCSIDriver-role
+  namespace: kube-system
+spec:
+  assumeRolePolicyDocument: |
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "",
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::526718405617:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/22B299F9904585182B1328DF00D31ECC"
+          },
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {
+            "StringEquals": {
+              "oidc.eks.us-east-1.amazonaws.com/id/22B299F9904585182B1328DF00D31ECC:aud": "sts.amazonaws.com",
+              "oidc.eks.us-east-1.amazonaws.com/id/22B299F9904585182B1328DF00D31ECC:sub": "system:serviceaccount:kube-system:fsx-csi-controller-sa"
+            }
+          }
+        }
+      ]
+    }
+  name: eks-irsa-FSxLustreCSIDriver-role
+  policies:
+  - "arn:aws:iam::526718405617:policy/eks-irsa-fsx-csi-controller-sa-policy"

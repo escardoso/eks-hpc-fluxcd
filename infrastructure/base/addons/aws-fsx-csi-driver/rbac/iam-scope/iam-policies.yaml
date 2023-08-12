@@ -1,0 +1,45 @@
+apiVersion: iam.services.k8s.aws/v1alpha1
+kind: Policy
+metadata:
+  name: eks-irsa-fsx-csi-controller-sa-policy
+  namespace: kube-system
+spec:
+  policyDocument: |
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": [
+            "iam:CreateServiceLinkedRole",
+            "iam:AttachRolePolicy",
+            "iam:PutRolePolicy"
+          ],
+          "Resource": "arn:aws:iam::*:role/aws-service-role/s3.data-source.lustre.fsx.amazonaws.com/*"
+        },
+        {
+          "Action":"iam:CreateServiceLinkedRole",
+          "Effect":"Allow",
+          "Resource":"*",
+          "Condition":{
+            "StringLike":{
+              "iam:AWSServiceName":[
+                "fsx.amazonaws.com"
+              ]
+            }
+          }
+        },
+        {
+          "Effect": "Allow",
+          "Action": [
+            "s3:ListBucket",
+            "fsx:CreateFileSystem",
+            "fsx:DeleteFileSystem",
+            "fsx:DescribeFileSystems",
+            "fsx:TagResource"
+          ],
+          "Resource": ["*"]
+        }
+      ]
+    }
+  name: eks-irsa-fsx-csi-controller-sa-policy
