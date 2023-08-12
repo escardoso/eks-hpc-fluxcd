@@ -12,7 +12,6 @@ resources:
 
   - ./rbac/iam-scope/iam-policies.yaml
   - ./rbac/iam-scope/iam-roles.yaml
-  - ./rbac/k8s-scope/namespace.yaml
   - ./rbac/k8s-scope/cluster-roles.yaml
   - ./rbac/k8s-scope/role-bindings.yaml
   - ./rbac/k8s-scope/service-accounts.yaml
