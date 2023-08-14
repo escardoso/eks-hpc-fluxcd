@@ -7,5 +7,5 @@ resources:
   # - disallow-host-namespaces.yaml
   # - disallow-host-paths.yaml
   # - disallow-host-ports.yaml
-  # - disallow-privileged-containers.yaml
+  - require-aws-node-irsa.yaml
   - deny-no-labels.yaml
